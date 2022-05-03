@@ -1,10 +1,9 @@
 import 'dart:math' as math;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatefulWidget {
-  SecondPage({Key key}) : super(key: key);
+  const SecondPage({Key? key}) : super(key: key);
 
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -12,14 +11,14 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State with SingleTickerProviderStateMixin {
   List<Widget> widgets = [];
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
 
     _controller =
-        AnimationController(vsync: this, duration: Duration(seconds: 2))
+        AnimationController(vsync: this, duration: const Duration(seconds: 2))
           ..repeat();
 
     for (int i = 0; i < 999; i++) {
@@ -37,7 +36,7 @@ class _SecondPageState extends State with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Master Flutter'),
+        title: const Text('Master Flutter'),
       ),
       body: GridView.builder(
         itemCount: widgets.length,
@@ -45,14 +44,14 @@ class _SecondPageState extends State with SingleTickerProviderStateMixin {
           return getRow(position);
         },
         gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       ),
     );
   }
 
   Widget getRow(int i) {
     return Padding(
-      padding: EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       child: Center(
         child: AnimatedBuilder(
           animation: _controller,
@@ -62,7 +61,7 @@ class _SecondPageState extends State with SingleTickerProviderStateMixin {
               child: child,
             );
           },
-          child: FlutterLogo(
+          child: const FlutterLogo(
             size: 75,
             style: FlutterLogoStyle.markOnly,
           ),

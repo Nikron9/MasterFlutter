@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
           // or simply save your changes to "hot reload" in a Flutter IDE).
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
-          primarySwatch: Colors.indigo,
-          accentColor: Colors.indigoAccent),
-      home: MainWidget(),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo)
+              .copyWith(secondary: Colors.indigoAccent)),
+      home: const MainWidget(),
       routes: <String, WidgetBuilder>{
-        '/first': (BuildContext context) => FirstPage(),
-        '/second': (BuildContext context) => SecondPage()
+        '/first': (BuildContext context) => const FirstPage(),
+        '/second': (BuildContext context) => const SecondPage()
       },
     );
   }

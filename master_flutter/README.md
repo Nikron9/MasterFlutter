@@ -1,6 +1,6 @@
 # master_flutter
 
-A new Flutter application.
+Master flutter app
 
 ## Getting Started
 
