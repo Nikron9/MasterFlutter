@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:master_flutter/pages/second_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
@@ -6,12 +7,15 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      // Center is a layout widget. It takes a single child and positions it
-      // in the middle of the parent.
       child: ElevatedButton(
         child: const Text("Next"),
         onPressed: () {
-          Navigator.of(context).pushNamed('/second');
+          Navigator.push(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (_, __, ___) => const SecondPage(),
+                transitionDuration: const Duration(seconds: 0),
+              ));
         },
       ),
     );
