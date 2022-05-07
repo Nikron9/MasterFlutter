@@ -48,6 +48,7 @@ class _SecondPageState extends State with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.builder(
+        key: const Key("list"),
         itemCount: widgets.length,
         itemBuilder: (BuildContext context, int position) {
           return getRow(position);

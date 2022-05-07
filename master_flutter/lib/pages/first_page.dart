@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FirstPage extends StatefulWidget {
@@ -116,7 +115,7 @@ class _FirstPageState extends State {
               fit: BoxFit.scaleDown,
               child: ElevatedButton(
                 onPressed: () {},
-                child: const Text("Button"),
+                child: const Text("BUTTON"),
               ),
             ),
           ),

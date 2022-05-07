@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_driver/driver_extension.dart';
 import 'package:master_flutter/pages/first_page.dart';
 import 'package:master_flutter/pages/second_page.dart';
 
 import 'main_widget.dart';
 
 void main() {
+  enableFlutterDriverExtension();
   runApp(const MasterFlutterApp());
 }
 
@@ -14,6 +16,7 @@ class MasterFlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      key: Key("dashboard"),
       title: 'Master Flutter',
       theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo)

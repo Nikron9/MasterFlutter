@@ -45,6 +45,7 @@ class _MainWidgetState extends State<MainWidget> {
         children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -53,7 +54,7 @@ class _MainWidgetState extends State<MainWidget> {
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
             label: 'List',
-          )
+          ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
